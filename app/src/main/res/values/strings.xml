@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GroupAdmin</string>
+    <string name="refuse">رفض</string>
+    <string name="accept">قبول</string>
+</resources>

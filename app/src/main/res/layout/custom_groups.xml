@@ -1,0 +1,218 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    app:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/groupImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                tools:src="@tools:sample/avatars"
+                android:backgroundTint="@color/white"
+                app:civ_border_color="@color/black"
+                app:civ_border_overlay="true"
+                app:civ_border_width="0dp"
+                app:civ_circle_background_color="#FFFFFF" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp">
+
+
+                <TextView
+                    android:id="@+id/groupName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/good"
+                    android:paddingTop="4dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:lineHeight="26dp"
+                    android:paddingHorizontal="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:gravity="start"
+                    android:layout_gravity="start"
+                    tools:text="Name of thegroupName group group group group "
+                    />
+
+                <TextView
+                    android:id="@+id/groupDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/acme"
+                    android:maxLines="2"
+                    android:padding="4dp"
+                    android:gravity="start"
+                    android:layout_gravity="start"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="@string/refuse" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <LinearLayout
+                android:id="@+id/countryInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/countryImage1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/countryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    tools:text="مغربية مغربيةمغربية" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:padding="4dp"
+                android:text="مجموعة :"
+                android:textColor="@color/light_turquoise"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/white"
+                android:rotation="20"
+                android:layout_marginHorizontal="8dp"
+                />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/groupGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primarybg"
+                android:fontFamily="@font/acme"
+                android:paddingVertical="2dp"
+                android:text="الهواية و الهواية و الفنون"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:chipCornerRadius="2dp"
+                app:chipEndPadding="4dp"
+                app:chipMinTouchTargetSize="0dp"
+                app:chipStartPadding="4dp"
+                app:chipStrokeColor="@color/primarybg"
+                app:textEndPadding="3dp"
+                app:textStartPadding="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:padding="4dp"
+                android:text="الفئة: "
+                android:textColor="@color/light_turquoise"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removeGroup"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#F44336"
+                android:fontFamily="@font/good"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/refuse"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="5dp"
+                android:layout_marginHorizontal="4dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addGroup"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/good"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/accept"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="5dp"
+                android:layout_marginHorizontal="4dp"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>
