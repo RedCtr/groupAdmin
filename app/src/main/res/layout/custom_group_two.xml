@@ -1,0 +1,226 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:layout_marginVertical="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    app:cardCornerRadius="4dp">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_image"
+         />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clickGroup"
+                style="@style/Widget.Material3.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/ibm_plex_sans_medium"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:stateListAnimator="@null"
+                android:text="الإنضمام"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/whatsa_logo"
+                app:iconSize="12dp"
+                app:iconPadding="10dp"
+                app:iconGravity="textStart" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="1dp">
+
+
+                <TextView
+                    android:id="@+id/groupName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/ibm_plex_sans_bold"
+                    android:lineHeight="26dp"
+                    android:maxLines="2"
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    tools:text="للبللبلبل لبلبل لب" />
+
+                <TextView
+                    android:id="@+id/groupDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    android:maxLines="2"
+                    android:padding="4dp"
+                    android:textColor="@color/grayColor"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:layout_marginVertical="4dp"
+                    tools:text="فقفقلالالفققث بريفبي لبفليي ليقيليف ليقيي لليقي ليي لبيبيلي يلييبيبيبيببببببببببببببببببييييييييي" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <LinearLayout
+                android:id="@+id/countryInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/countryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibm_plex_sans_semibold"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    tools:text="مغربية مغربيةمغربية" />
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/location_on"
+                     />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/gnt_gray"
+                android:rotation="20"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/genreInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/groupGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibm_plex_sans_semibold"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    tools:text="الهواية و الفنون" />
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/category"
+                   />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removeGroup"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#F44336"
+                android:fontFamily="@font/good"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/refuse"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="5dp"
+                android:layout_marginHorizontal="4dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addGroup"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/good"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/accept"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="5dp"
+                android:layout_marginHorizontal="4dp"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

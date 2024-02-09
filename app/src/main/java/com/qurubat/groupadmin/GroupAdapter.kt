@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.qurubat.groupadmin.databinding.CustomGroupTwoBinding
 import com.qurubat.groupadmin.databinding.CustomGroupsBinding
 import com.qurubat.groupadmin.models.Group
 
@@ -31,7 +32,7 @@ class GroupAdapter(
     }
 
     class ViewHolder(
-        private val binding: CustomGroupsBinding
+        private val binding: CustomGroupTwoBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(group: Group, onButtonClick: ButtonViewClicked) {
@@ -42,13 +43,6 @@ class GroupAdapter(
                 groupGenre.text = group.genre
                 countryName.text = group.countryName
 
-                Glide.with(root)
-                    .load(group.groupImage)
-                    .into(groupImage)
-
-                Glide.with(root)
-                    .load(group.countryImage)
-                    .into(countryImage1)
 
                 root.setOnClickListener {
                     // Create an Intent with ACTION_VIEW and the group link URL
@@ -57,6 +51,16 @@ class GroupAdapter(
                     if(intent.resolveActivity(it.context.packageManager) != null) {
                         it.context.startActivity(intent)
                     } else Toast.makeText(it.context,"The WhatsApp Link is invalid",Toast.LENGTH_LONG).show()
+                }
+
+                clickGroup.setOnClickListener {
+                    // Create an Intent with ACTION_VIEW and the group link URL
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(group.groupLink))
+                    // Check if WhatsApp is installed on the device
+                    if(intent.resolveActivity(it.context.packageManager) != null) {
+                        it.context.startActivity(intent)
+                    } else Toast.makeText(it.context,"The WhatsApp Link is invalid",Toast.LENGTH_LONG).show()
+
                 }
 
                 addGroup.setOnClickListener {
@@ -82,7 +86,7 @@ class GroupAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
        return ViewHolder(
-           CustomGroupsBinding.inflate(
+           CustomGroupTwoBinding.inflate(
                LayoutInflater.from(parent.context),
                parent,
                false

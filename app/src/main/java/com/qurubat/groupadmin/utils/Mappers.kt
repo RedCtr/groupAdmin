@@ -22,6 +22,11 @@ object Mappers {
         "سوريا" to "سورية",
         "ليبيا" to "ليبية",
         "لبنان" to "لبنانية",
+
+        "تركيا" to "تركية",
+        "سودان" to "سودانية",
+        "فرنسا" to "فرنسية",
+        "تتارستان" to "تتارستانية",
     )
 
     fun getCountryName(countryName: String): String {

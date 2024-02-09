@@ -67,13 +67,15 @@ class MainViewModel @Inject constructor(
                 // Document deleted successfully
                 // Now, delete associated images from Firebase Storage
 
-                storage
-                    .reference
-                    .child(imagePathName) // ex: /usersGroupImages/image_1695827113260.jpg
-                    .delete()
-                    .addOnSuccessListener {
-                        isTheDocDeleted.value = true
-                    }
+//                storage
+//                    .reference
+//                    .child(imagePathName) // ex: /usersGroupImages/image_1695827113260.jpg
+//                    .delete()
+//                    .addOnSuccessListener {
+//                        isTheDocDeleted.value = true
+//                    }
+
+                isTheDocDeleted.value = true
             }
 
     }
@@ -87,31 +89,51 @@ class MainViewModel @Inject constructor(
             .delete()
 
         firestore
-            .collection("allGroups")
-            .add(group)
+            .collection("countries")
+            .whereEqualTo(
+                "countryName",
+                getKeyByValue(Mappers.countryNameMapper, group.countryName)
+            )
+            .get()
             .addOnSuccessListener {
-                firestore
-                    .collection("countries")
-                    .whereEqualTo(
-                        "countryName",
-                        getKeyByValue(Mappers.countryNameMapper, group.countryName)
-                    )
-                    .get()
-                    .addOnSuccessListener {
-                        if (!it.isEmpty) {
-                            val myDoc = it.documents[0]
+                if (!it.isEmpty) {
+                    val myDoc = it.documents[0]
 
-                            myDoc
-                                .reference
-                                .collection("groups")
-                                .add(group)
-                                .addOnSuccessListener {
-                                    isTheDocSaved.value = true
-                                }
+                    myDoc
+                        .reference
+                        .collection("groups")
+                        .add(group)
+                        .addOnSuccessListener {
+                            isTheDocSaved.value = true
                         }
-                    }
-
+                }
             }
+//        firestore
+//            .collection("allGroups")
+//            .add(group)
+//            .addOnSuccessListener {
+//                firestore
+//                    .collection("countries")
+//                    .whereEqualTo(
+//                        "countryName",
+//                        getKeyByValue(Mappers.countryNameMapper, group.countryName)
+//                    )
+//                    .get()
+//                    .addOnSuccessListener {
+//                        if (!it.isEmpty) {
+//                            val myDoc = it.documents[0]
+//
+//                            myDoc
+//                                .reference
+//                                .collection("groups")
+//                                .add(group)
+//                                .addOnSuccessListener {
+//                                    isTheDocSaved.value = true
+//                                }
+//                        }
+//                    }
+//
+//            }
     }
 
     private fun getKeyByValue(map: Map<String, String>, countryName: String): String {
